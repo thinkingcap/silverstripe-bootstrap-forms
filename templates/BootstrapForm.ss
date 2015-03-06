@@ -7,7 +7,7 @@
 		<% else_if MessageType == "info" %>
 			<div id="{$FormName}_error" class="alert alert-info">$Message</div>	
 		<% else_if MessageType == "bad" %>
-			<div id="{$FormName}_error" class="alert alert-error">$Message</div>	
+			<div id="{$FormName}_error" class="alert alert-danger">$Message</div>
 		<% end_if %>
 	<% end_if %>
 	
