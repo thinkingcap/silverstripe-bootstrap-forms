@@ -9,6 +9,11 @@ class BootstrapMemberLoginForm extends MemberLoginForm {
 		parent::__construct($controller, $name, $fields, $actions, $checkCurrentUser);
 		$this->Fields()->bootstrapify();
 		$this->Actions()->bootstrapify();
+		foreach($this->Actions() as $act)
+		{
+			if($act->getAttribute('type') == 'submit')
+				$act->setStyle('primary');
+		}
 		$this->setTemplate("BootstrapForm");
 
 		$this->invokeWithExtensions('updateBoostrapMemberLoginForm', $this);
